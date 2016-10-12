@@ -4,7 +4,7 @@
 It's a fork from https://exchange.nagios.org/directory/Plugins/License-Management/check_flexlm/details 
 
 # Changelog
-## v1.0.1
+## v1.1.0
   - add performance data to the output
   - change lmstat paramter from -A to -a
 
