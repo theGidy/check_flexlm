@@ -1,7 +1,7 @@
 name: check_flexlm
 description: "file:///README.md"
 url: "https://github.com/theGidy/check_flexlm"
-tags: Statistic
+tags: Statistic, IDL, FLEXlm, EXCELIS
 vendor: Linux
 target: Operating System
 type: Plugin
