@@ -1,4 +1,4 @@
-name: check_spectrum_scale
+name: check_flexlm
 description: "file:///README.md"
 url: "https://github.com/theGidy/check_flexlm"
 tags: Statistic
