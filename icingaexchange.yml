@@ -1,0 +1,18 @@
+name: check_spectrum_scale
+description: "file:///README.md"
+url: "https://github.com/theGidy/check_flexlm"
+tags: Statistic
+vendor: Linux
+target: Operating System
+type: Plugin
+license: gplv3
+releases: 
+  - 
+    name: 1.1.0
+    description: "1.1.0"
+    files: 
+      - 
+        name: check_flexlm.pl
+        url: "file:///check_spectrum_scale.py"
+        description: "Check the flexlm server for license informations"
+        checksum: 51c9cec0e52981ec11a3dcdea6b3b159 
