@@ -13,6 +13,6 @@ releases:
     files: 
       - 
         name: check_flexlm.pl
-        url: "file:///check_flexlm.pl""
+        url: "file://check_flexlm.pl""
         description: "Check the flexlm server for license informations"
         checksum: 51c9cec0e52981ec11a3dcdea6b3b159 
