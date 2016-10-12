@@ -1,14 +1,14 @@
 # check_flexlm
 
-# Fork description
+## Fork disclaimer
 It's a fork from https://exchange.nagios.org/directory/Plugins/License-Management/check_flexlm/details 
 
-# Changelog
-## v1.1.0
+### Changelog
+### v1.1.0
   - add performance data to the output
   - change lmstat paramter from -A to -a
   
-# Example
+## Example
 
 Example configuration for the nrpe.cfg
 
@@ -16,7 +16,7 @@ Example configuration for the nrpe.cfg
 command[check_flexlm_status]=/usr/lib/nagios/plugins/check_flexlm.pl -H flexlm-server.dlr.de -p 1234
 </code>
 
-# Original readme
+## Original readme
 
 Checks Macrovision FLEXlm license servers. (Requires the lmutil utility for your OS running Nagios - see www.macrovision.com to obtain this).
 Yeah, I know the standard Nagios plugins package contains a check_flexlm plugin. But it has not been updated in quite a while, didn't work properly for me, and most of its functionality seems concerned with license server triads. That's great if you actually use triads, but I've been working with various FLEXlm-licensed software packages for over 10 years and have never seen anyone use a triad. There are usually so many other points of failure to worry about, it's just not that critical considering the additional management complexity.
