@@ -11,8 +11,8 @@ It's a fork from https://exchange.nagios.org/directory/Plugins/License-Managemen
 # Example
 
 Example configuration for the nrpe.cfg
+
 <code>
-#Check if FlexLm Server is running
 command[check_flexlm_status]=/usr/lib/nagios/plugins/check_flexlm.pl -H flexlm-server.dlr.de -p 1234
 </code>
 
