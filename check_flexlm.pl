@@ -12,6 +12,7 @@
 #                        powered by Perl                       #
 #                                                              #
 # Joshua.Parsell@aerojet.com                   copyright 2007  #
+# Philipp.Posovszky@dlr.de
 #==============================================================#
 #                                                              #
 # CHANGELOG:                                                   #
@@ -167,7 +168,7 @@ sub owc_stat {
         my $yellow_feats = [];
         my $features = 0;
 
-	my $performanceData = "|";
+    	my $performanceData = "|";
         for (@lmstat_lines)
         {	
                 if ($features eq 0)
