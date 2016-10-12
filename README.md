@@ -1,7 +1,12 @@
 # check_flexlm
 
 # Fork description
-It's a fork from https://exchange.nagios.org/directory/Plugins/License-Management/check_flexlm/details and just added some performance data and check all modules instead of only idl.
+It's a fork from https://exchange.nagios.org/directory/Plugins/License-Management/check_flexlm/details 
+
+# Changelog
+## v1.0.1
+  - add performance data to the output
+  - change lmstat paramter from -A to -a
 
 # Original readme
 
