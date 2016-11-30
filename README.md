@@ -1,7 +1,6 @@
 # check_flexlm
 
-## Fork disclaimer
-It's a fork from https://exchange.nagios.org/directory/Plugins/License-Management/check_flexlm/details 
+ 
 
 ### Changelog
 ### v1.2.0
@@ -16,6 +15,12 @@ It's a fork from https://exchange.nagios.org/directory/Plugins/License-Managemen
 ```
 command[check_flexlm_status]=/usr/lib/nagios/plugins/check_flexlm.pl -H flexlm-server.dlr.de -p 1234 -n 3
 ```
+
+## OpenSource Release on
+https://github.com/theGidy/check_flexlm
+
+## Fork disclaimer
+It's a fork from https://exchange.nagios.org/directory/Plugins/License-Management/check_flexlm/details
 
 ## Original readme
 
