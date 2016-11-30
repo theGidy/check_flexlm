@@ -13,10 +13,9 @@ It's a fork from https://exchange.nagios.org/directory/Plugins/License-Managemen
   
 ## Example
 
-Example configuration for the nrpe.cfg. Check if all 3 licence servers are running on the port 1234. 
-<code>
+```
 command[check_flexlm_status]=/usr/lib/nagios/plugins/check_flexlm.pl -H flexlm-server.dlr.de -p 1234 -n 3
-</code>
+```
 
 ## Original readme
 
