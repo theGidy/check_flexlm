@@ -6,6 +6,7 @@ It's a fork from https://exchange.nagios.org/directory/Plugins/License-Managemen
 ### Changelog
 ### v1.2.0
   - support multiy licence server enviroment
+  
 ### v1.1.0
   - add performance data to the output
   - change lmstat paramter from -A to -a
