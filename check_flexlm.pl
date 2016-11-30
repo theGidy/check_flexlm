@@ -205,7 +205,7 @@ sub owc_stat {
 
         if ($red_flag > 0)
         {
-                if($red_flag > $serverCount)
+                if($red_flag >= $serverCount)
                 {
                     $output = "FLEXlm CRITICAL: License Servers Down or Unreachable.";
                 }else
