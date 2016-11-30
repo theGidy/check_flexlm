@@ -12,6 +12,7 @@ https://github.com/theGidy/check_flexlm
 ## Fork disclaimer
 It's a fork from https://exchange.nagios.org/directory/Plugins/License-Management/check_flexlm/details
 
+
 ## Original readme
 
 Checks Macrovision FLEXlm license servers. (Requires the lmutil utility for your OS running Nagios - see www.macrovision.com to obtain this).
