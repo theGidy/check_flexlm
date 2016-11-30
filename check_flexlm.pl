@@ -109,6 +109,7 @@ if ($ARGV[0] eq "--help")
 
 my ($port, $server);
 my $vendor = 0;
+my $serverCount = 1;
 
 my %arg_hash = @ARGV;
 # Make sure only the correct options are being used.
@@ -219,7 +220,7 @@ sub owc_stat {
                 $output = "FLEXlm OK: Server is up.  All Modules/Features Available.";
         }
 
-        output.=$performanceData;
+        $output.=$performanceData;
         $output .= "\n";
         return ($output);
 }
