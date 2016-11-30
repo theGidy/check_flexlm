@@ -8,11 +8,11 @@ type: Plugin
 license: gplv3
 releases: 
   - 
-    name: 1.1.0
-    description: "1.1.0"
+    name: 1.2.0
+    description: "1.2.0"
     files: 
       - 
         name: check_flexlm.pl
         url: "file:///check_flexlm.pl"
         description: "Check the flexlm server for license informations"
-        checksum: 51c9cec0e52981ec11a3dcdea6b3b159 
+        checksum: 8901e03763bbc518a7224fb6017841b8 

@@ -4,16 +4,17 @@
 It's a fork from https://exchange.nagios.org/directory/Plugins/License-Management/check_flexlm/details 
 
 ### Changelog
+### v1.2.0
+  - support multiy licence server enviroment
 ### v1.1.0
   - add performance data to the output
   - change lmstat paramter from -A to -a
   
 ## Example
 
-Example configuration for the nrpe.cfg
-
+Example configuration for the nrpe.cfg. Check if all 3 licence servers are running on the port 1234. 
 <code>
-command[check_flexlm_status]=/usr/lib/nagios/plugins/check_flexlm.pl -H flexlm-server.dlr.de -p 1234
+command[check_flexlm_status]=/usr/lib/nagios/plugins/check_flexlm.pl -H flexlm-server.dlr.de -p 1234 -n 3
 </code>
 
 ## Original readme

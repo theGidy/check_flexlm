@@ -18,6 +18,7 @@
 # CHANGELOG:                                                   #
 # 2007-01-15 - v1.0.0 - First release.                         #
 # 2016-10-12 - v1.1.0 - Add Performance Data, Philipp Posovszky#
+# 2016-11-30 - v1.2.0 - Suppor multi sever, Philipp Posovszky  #
 #                                                              #
 #==============================================================#
 #                                                              #
@@ -55,7 +56,7 @@ use CGI qw(:standard escape escapeHTML);
 my $help_msg = <<HELPMSG;
 
  -=-==================-=-
- -=- check_flexlm.plx -=-
+ -=- check_flexlm.pl -=-
  -=-==================-=-
 
  copyright 2007 Joshua C. Parsell
@@ -63,9 +64,9 @@ my $help_msg = <<HELPMSG;
 
  v 1.1.0
 
- Purpose: CHECK_FLEXLM.PLX is a Nagios plugin which checks the status of a
+ Purpose: CHECK_FLEXLM.PL is a Nagios plugin which checks the status of a
                 FLEXlm license server.  If everything is running correctly, you
-                get an OK.  If one or more modules are currently maxxed out, you
+                get an OK.  If one or more modules are currently maxed out, you
                 get a WARNING.  If there is some sort of error, like the license
                 server isn't running or can't be reached, you get a CRITICAL.
 
@@ -76,15 +77,18 @@ my $help_msg = <<HELPMSG;
                 check individual vendor daemons separately, in cases where you
                 are serving multiple vendor daemons with one lmgrd over a single
                 port number.
+                
+                Server count is optional. It should be supplied if you have more 
+                redudant server as licence servers. 
 
- Usage:  perl check_flexlm.plx -p port -H hostname [-S vendor_daemon]
+ Usage:  perl check_flexlm.pl -p port -H hostname [-S vendor_daemon] [-n server_count]
 
 HELPMSG
 my $syntax_error = <<SYNERR;
 
  Incorrect syntax.
 
- Usage:  perl check_flexlm.plx -H hostname [-p port] [-S vendor_daemon]
+ Usage:  perl check_flexlm.plx -H hostname [-p port] [-S vendor_daemon] [-n server_count]
   -OR-   perl check_flexlm.plx --help
 
 SYNERR
@@ -110,21 +114,22 @@ my %arg_hash = @ARGV;
 # Make sure only the correct options are being used.
 foreach (keys %arg_hash)
 {
-	if (($_ ne "-p")&&($_ ne "-H")&&($_ ne "-S"))
-	{
-		print "\n ERROR: Invalid option: " . $_ . "\n";
-		print $syntax_error;
-		exit;
-	}
+	if (($_ ne "-p")&&($_ ne "-H")&&($_ ne "-S")&&($_ ne "-n"))
+        {
+                print "\n ERROR: Invalid option: " . $_ . "\n";
+                print $syntax_error;
+                exit;
+        }
         $port = $arg_hash{"-p"} if ($_ eq "-p");
         $vendor = $arg_hash{"-S"} if ($_ eq "-S");
         $server = $arg_hash{"-H"} if ($_ eq "-H");
+        $serverCount= $arg_hash{"-n"} if ($_ eq "-n");
 }
 
 
 
 my $content;                                            # main page content
-my $path_to_lmutil = "/usr/local/exelis/idl82/bin/lmutil";                 # path to the lmutil executable on the system.  Make sure the web server user can run it!
+my $path_to_lmutil = "/usr/local/exelis/idl82/bin/lmutil"; # path to the lmutil executable on the system.  Make sure the web server user can run it!
 
 $port = "27000" if (!$port); # Default to 27000 for port
 
